@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="stylesheet" href="CSS/rightclick.css">
+  <link rel="stylesheet" href="CSS/leaflet.css"/>
+  <link rel="stylesheet" href="CSS/leaflet-measure-path.css"/>
+  <link rel="stylesheet" href="CSS/leaflet-sidepanel.css"/>
+  <link rel="stylesheet" href="CSS/leaflet.contextmenu.css"/>
+  <link rel="stylesheet" href="CSS/leaflet-notifications.css"/>
+  <link rel="stylesheet" href="CSS/L.cascadeButtons.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="CSS/Leaflet.Dialog.css"/>
+  <link rel="stylesheet" href="CSS/highlightmarker.css">
+  <link rel="stylesheet" href="CSS/tooltip.css">
+  <link rel="stylesheet" href="CSS/sidebar.css">
+  <script src="JS/leaflet.js"></script>
+  <script src="JS/Leaflet.Dialog.js"></script>
+  <script src="JS/leaflet-measure-path.js"></script>
+  <script src="JS/leaflet-sidepanel.js"></script>
+  <script src="JS/leaflet.contextmenu.js"></script>
+  <script src="JS/leaflet-notifications.js"></script>
+  <script src="JS/L.cascadeButtons.js"></script>
+  <script src="JS/lc_switch.js"></script>
+</head>
+<body>
+<div id="map" style="height: 890px;  overflow: hidden; transition: margin-left 0.5s ease;"><!-- placeholdermap -->
+  <div id="panelID" class="sidepanel" aria-label="side panel" aria-hidden="false">
+      <div class="sidepanel-inner-wrapper">
+        <nav class="sidepanel-tabs-wrapper" aria-label="sidepanel tab navigation">
+          <ul class="sidepanel-tabs">
+            <li class="sidepanel-tab">
+              <a href="#" class="sidebar-tab-link" role="tab" data-tab-link="tab-1">Monitor</a>
+            </li>
+            <!-- [...] -->
+          </ul>
+        </nav>
+        <div class="sidepanel-content-wrapper">
+          <div class="sidepanel-content">
+            <div class="sidepanel-tab-content" data-tab-content="tab-1">
+              <div class="monitor-container">
+                <div class="flex-image">
+                  <img src="CSS/images/pisang.jpg" width="363px" height="250px">
+                </div>
+                <div id="scroll" class="flex-nama">
+                  <p>Nama AWS</p>
+                </div>
+                <div class="flex-tabs">
+                    <button id="statusbutton" onclick="sideBarTab('stat', 'statusbutton')" style="color: rgb(115, 196, 115);">Status</button>
+                    <button id="databutton" onclick="sideBarTab('dat', 'databutton')">Data</button>
+                    <button id="controlbutton" onclick="sideBarTab('cont', 'controlbutton')">Control</button>
+                </div>
+                <div class="flex-description">
+                  <div class="status">
+                    <table id="stat">
+                      <tr>
+                        <td>Sensor1</td>
+                        <td class="staton">ON</td>
+                      </tr>
+                      <tr>
+                        <td>Sensor2</td>
+                        <td class="statoff">OFF</td>
+                      </tr>
+                      <tr>
+                        <td>Sensor3</td>
+                        <td class="staton">ON</td>
+                      </tr>
+                      <tr>
+                        <td>Sensor4</td>
+                        <td class="statoff">OFF</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="data">
+                    <table id="dat" hidden>
+                      <tr>
+                        <td>Sensor1</td>
+                        <td class="nein">100 un</td>
+                      </tr>
+                      <tr>
+                        <td>Sensor2</td>
+                        <td class="nein">100 un</td>
+                      </tr>
+                      <tr>
+                        <td>Sensor3</td>
+                        <td class="nein">100 un</td>
+                      </tr>
+                      <tr>
+                        <td>Sensor4</td>
+                        <td class="nein">100 un</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="control">
+                    <table id="cont" hidden>
+                      <tr>
+                        <td>Sensor1</td>
+                        <td><input type="checkbox"></td>
+                      </tr>
+                      <tr>
+                        <td>Sensor2</td>
+                        <td><input type="checkbox"></td>
+                      </tr>
+                      <tr>
+                        <td>Sensor3</td>
+                        <td><input type="checkbox"></td>
+                      </tr>
+                      <tr>
+                        <td>Sensor4</td>
+                        <td><input type="checkbox"></td>
+                      </tr>
+                      <tr style="margin-top: 10px;">
+                        <td style="border: none;"colspan="2"><input type="button" value="Submit"></td>
+                      </tr>
+                    </table>
+                    <script type="text/javascript">
+                        function sideBarTab(name, butt){
+                          document.getElementById('stat').hidden = true;
+                          document.getElementById('dat').hidden = true;
+                          document.getElementById('cont').hidden = true;
+                          document.getElementById('statusbutton').style.color = 'black';
+                          document.getElementById('databutton').style.color = 'black';
+                          document.getElementById('controlbutton').style.color = 'black';
+                          var tab = document.getElementById(name);
+                          var but = document.getElementById(butt);
+                          tab.hidden = false;
+                          but.style.color = 'rgb(115, 196, 115)';
+                          
+                        }
+                    </script>
+                  </div>
+                </div>
+              </div> 
+            </div>
+            <!-- [...] -->
+          </div>
+        </div>
+      </div>
+      <div class="sidepanel-toggle-container">
+        <button id="slept" class="sidepanel-toggle-button" type="button" aria-label="toggle side panel"></button>
+      </div>
+    </div>
+</div>
+</body>
+  <script src="JS/MAP.js"></script>
+  <script type="text/javascript">
+    lc_switch('input[type=checkbox]');
+    </script>
+</html>

@@ -1,0 +1,72 @@
+
+/* main div */
+.monitor-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.monitor-container p{
+    margin: 0px;
+}
+/* nama */
+.flex-nama{
+    font-size: large;
+    overflow-wrap: break-word;
+}
+
+/* description */
+.flex-tabs{
+    display: flex;
+    overflow: hidden;
+    justify-content: space-evenly;
+    border-style: solid;
+    border-color: rgb(115, 196, 115);
+    border-top: green;
+    border-left: green;
+    border-right: green;
+    transition: 0.3s;
+}
+.flex-tabs button{
+    background-color: white;
+    border: none;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+.flex-tabs button:hover{
+    color: rgb(115, 196, 115) !important;
+}
+
+.flex-description{
+    margin-top: 10px;
+}
+.flex-description table{
+    width: 100%; 
+    height: 20.625vh;
+}
+.status td{
+    width: 80%;
+    font-size: large;
+}
+.staton{
+    color: rgb(115, 196, 115);
+    font-weight: 700;
+}
+.statoff{
+    color: rgb(183, 74, 74);
+    font-weight: 700;
+}
+.control td{
+    width: 80%;
+    font-size: large;
+}
+.data td{
+    width: 75%;
+    font-size: large;
+}
+.nein{
+    font-size: xx-large;
+}

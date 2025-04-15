@@ -1,0 +1,48 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  input {
+    width: 100%; /* Expand input field to fill the cell */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in width */
+  }
+  /* Style the submit button */
+  input[type="button"] {
+    background-color: #4CAF50; /* Green color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+
+  /* Change background color on hover */
+  input[type="button"]:hover {
+    background-color: #45a049; /* Darker green */
+  }
+
+  /* Animation when clicked */
+  input[type="button"]:active {
+    animation: button-clicked 0.3s ease;
+  }
+
+  /* Define animation */
+  @keyframes button-clicked {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
